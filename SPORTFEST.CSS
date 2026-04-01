@@ -1,0 +1,320 @@
+:root {
+    --primary: #d32f2f;
+    --secondary: #1a1a1a; 
+    --accent: #ffeb3b; 
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0,0,0,0.8)), 
+                url('bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 20px;
+    border-bottom: 8px solid var(--primary);
+}
+
+header h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-transform: uppercase;
+    letter-spacing: 45px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-transform: uppercase;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    margin: 10px auto;
+}
+
+/* --- STANDINGS SECTION --- */
+.standings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.standing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.standing-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.standing-info img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0);
+   
+}
+
+/* Standings Gradients based on your images */
+.deet { background: linear-gradient(90deg, #000 0%, #333 60%, #eee 100%); color: white; }
+.dcpet { background: linear-gradient(90deg, #001f3f 0%, #004080 60%, #eee 100%); color: white; }
+.decet { background: linear-gradient(90deg, #ffd700 0%, #ffa500 60%, #eee 100%); color: #000; }
+.dmet { background: linear-gradient(90deg, #d32f2f 0%, #8b0000 60%, #eee 100%); color: white; }
+.dcvet { background: linear-gradient(90deg, #800080 0%, #4b0082 60%, #eee 100%); color: white; }
+.dremt { background: linear-gradient(90deg, #2e7d32 0%, #1b5e20 60%, #eee 100%); color: white; }
+
+.score {
+    background: white;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 5px;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* --- MATCHUP CARDS --- */
+.matchup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.match-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.match-header {
+    background: #f4f4f4;
+    padding: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+}
+
+.match-teams {
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+.vs {
+    font-size: 1rem;
+    color: #000000;
+    padding: 8px;
+    background: #f0f0f0;
+    border-radius: 50%;
+}
+
+.match-details {
+    padding: 0 15px 25px 15px;
+    color: #555;
+}
+
+/* Specific Team Text Colors */
+.dmet-text { color: #d32f2f; }
+.dcvet-text { color: #800080; }
+.dcpet-text { color: #004080; }
+.dremt-text { color: #2e7d32; }
+
+/* --- THE CONTENDERS SECTION --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.team-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-left: 10px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+}
+
+.team-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.team-card h3 {
+    font-size: 1.1rem;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.team-card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--secondary);
+    margin-top: 5px;
+}
+
+.cp-eng { border-left-color: #2e66cc; }
+.ce-eng { border-left-color: #7b2ecc; }
+.ee-eng { border-left-color: #000000; }
+.ece-eng { border-left-color: #f1c40f; }
+.me-eng { border-left-color: #e74c3c; }
+.re-eng { border-left-color: #1abc25; }
+
+/* --- TABLE SECTION --- */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.schedule-table th {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 18px;
+    text-align: left;
+}
+
+.schedule-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: var(--secondary);
+    color: #888;
+    margin-top: 60px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+    .match-teams { font-size: 1.5rem; }
+    .standing-row { font-size: 0.8rem; padding: 10px; }
+}
+/* ADD THIS AT THE VERY TOP OF YOUR CSS NEAR * { ... } */
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR STYLING */
+.navbar {
+    background-color: var(--secondary);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* OFFSET FOR ANCHOR JUMPING */
+/* This ensures the navbar doesn't cover the heading when jumping to a section */
+h2 {
+    scroll-margin-top: 100px; 
+}
+
+/* UPDATE YOUR MEDIA QUERY AT THE BOTTOM */
+@media (max-width: 600px) {
+    .match-teams { font-size: 1.5rem; }
+    .standing-row { font-size: 0.8rem; padding: 10px; }
+    
+    /* Stack nav links on small screens */
+    .nav-links { gap: 10px; }
+    .nav-links a { font-size: 0.7rem; }
+    .nav-logo { font-size: 1rem; }
+} 
